@@ -124,5 +124,45 @@ const players = [
 ]
 
 function draftPlayers() {
+    console.log('drafting teams')
+    // const newTeamNumber = Math.ceil(Math.random() * 2)
+    // console.log('team number', newTeamNumber)
 
+    // for (let i = 0; i < players.length; i++) {
+    //     const player = players[i]
+    //     player.teamNumber = newTeamNumber
+    //     console.log(player.name, player.teamNumber)
+    // }
+    players.forEach(player => player.teamNumber = Math.ceil(Math.random() * 2))
+    console.log('team number', players)
+
+    drawTeamOne()
+    drawTeamTwo()
 }
+
+function drawTeamOne() {
+    let rosterTemplate = ''
+
+    const teamOnePlayers = players.filter(player => player.teamNumber == 1)
+
+    teamOnePlayers.forEach(player => rosterTemplate += player.emoji)
+
+    const playerRosterElement = document.getElementById('teamOneRoster')
+    playerRosterElement.innerText = rosterTemplate
+}
+
+function drawTeamTwo() {
+    let rosterTemplate = ''
+
+    const teamTwoPlayers = players.filter(player => player.teamNumber == 2)
+
+    teamTwoPlayers.forEach(player => rosterTemplate += player.emoji)
+
+    const playerRosterElement = document.getElementById('teamTwoRoster')
+    playerRosterElement.innerText = rosterTemplate
+}
+
+
+// SECTION functions invoked upon page load
+
+draftPlayers()
