@@ -23,7 +23,7 @@
     <div class="container">
         <section class="row">
             <div class="col-12">
-                <p class="fs-3">Bank: $<span id="bankAmount">0</span></p>
+                <p class="fs-3">Bank: $<span id="bankAmount">100</span></p>
             </div>
         </section>
     </div>
@@ -35,18 +35,18 @@
                 <p><span id="teamOneRoster" class="text-bg-dark p-3 rounded-5">adfafd</span></p>
                 <div class="row">
                     <div class="col-4">
-                        <button type="button">Bet 5</button>
+                        <button type="button" onclick="betTeamOne(5)">Bet 5</button>
                     </div>
                     <div class="col-4">
-                        <button type="button">Bet 25</button>
+                        <button type="button" onclick="betTeamOne(25)">Bet 25</button>
                     </div>
                     <div class="col-4">
-                        <button type="button">Bet 100</button>
+                        <button type="button" onclick="betTeamOne(100)">Bet 100</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 m-1">
-                        <button type="button">Bet It All</button>
+                        <button type="button" onclick="betTeamOne(bank)">Bet It All</button>
                     </div>
                 </div>
             </div>
@@ -56,18 +56,18 @@
                 <p><span id="teamTwoRoster" class="text-bg-dark p-3 rounded-5">dfaas</span></p>
                 <div class="row">
                     <div class="col-4">
-                        <button type="button">Bet 5</button>
+                        <button type="button" onclick="betTeamTwo(5)">Bet 5</button>
                     </div>
                     <div class="col-4">
-                        <button type="button">Bet 25</button>
+                        <button type="button" onclick="betTeamTwo(25)">Bet 25</button>
                     </div>
                     <div class="col-4">
-                        <button type="button">Bet 100</button>
+                        <button type="button" onclick="betTeamTwo(100)">Bet 100</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 m-1">
-                        <button type="button">Bet It All</button>
+                        <button type="button" onclick="betTeamTwo(bank)">Bet It All</button>
                     </div>
                 </div>
             </div>

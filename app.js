@@ -163,6 +163,58 @@ function drawTeamTwo() {
 }
 
 
+function betTeamOne(betAmount) {
+    if (bank > 0) {
+        const teamOnePlayers = players.filter(player => player.teamNumber == 1)
+        const teamTwoPlayers = players.filter(player => player.teamNumber == 2)
+
+        let teamOneTotalSkill = 0
+        teamOnePlayers.forEach(player => { teamOneTotalSkill += player.skill })
+        let teamTwoTotalSkill = 0
+        teamTwoPlayers.forEach(player => { teamTwoTotalSkill += player.skill })
+
+
+
+        if (teamOneTotalSkill > teamTwoTotalSkill) {
+            bank += betAmount
+        } else {
+            bank -= betAmount
+        }
+        console.log(bank)
+    } else {
+        window.alert('Go Home Loser')
+    }
+    drawBank()
+}
+
+function betTeamTwo(betAmount) {
+    if (bank > 0) {
+        const teamOnePlayers = players.filter(player => player.teamNumber == 1)
+        const teamTwoPlayers = players.filter(player => player.teamNumber == 2)
+
+        let teamOneTotalSkill = 0
+        teamOnePlayers.forEach(player => { teamOneTotalSkill += player.skill })
+        let teamTwoTotalSkill = 0
+        teamTwoPlayers.forEach(player => { teamTwoTotalSkill += player.skill })
+
+
+
+        if (teamOneTotalSkill < teamTwoTotalSkill) {
+            bank += betAmount
+        } else {
+            bank -= betAmount
+        }
+        console.log(bank)
+    } else {
+        window.alert('Go Home Loser')
+    }
+    drawBank()
+}
+
+function drawBank() {
+    const bankElement = document.getElementById('bankAmount')
+    bankElement.innerText = bank
+}
 // SECTION functions invoked upon page load
 
 draftPlayers()
